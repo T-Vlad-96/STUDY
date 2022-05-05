@@ -41,11 +41,16 @@ def choose_element():
                 print(f"Player: {player_choice}\nComputer: {system_choice}\nComputer WIN!")
             elif system_choice == "scissors" or system_choice == "rock":
                 print(f"Player: {player_choice}\nComputer: {system_choice}\nPlayer WIN!")
-        next_game = input("Repeat (Y/N)?\n").lower()
 
-        if next_game == "y":
-            choose_element()
-        elif next_game == "n":
-            exit()
+        def next_game():
+            next_play = input("Repeat (Y/N)?\n").lower()
+            if next_play == "y" or next_play == "yes":
+                choose_element()
+            elif next_play == "n" or next_play == "no":
+                exit()
+            else:
+                print(f"invalid input {next_play}\nDo you want to repeat the game?")
+                next_game()
+        next_game()
 
 choose_element()
