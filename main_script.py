@@ -1,9 +1,9 @@
 import random
 elements = ["rock", "paper", "scissors", "lizard", "spock"]
-
+another_view_of_elements = "(rock paper scissors lizard spock)?"
 
 def choose_element():
-    player_choice = input(f"Make your choise {elements}\n>>>  ").lower()
+    player_choice = input(f"Make your choise {another_view_of_elements}\n>>>  ").lower()
     system_choice = random.choice(elements)
     if player_choice not in elements:
         print(f"invalid input {player_choice}")
