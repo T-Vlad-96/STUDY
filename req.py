@@ -14,6 +14,9 @@ def func(n = input() .split()):
         headers = {"apikey": "hJaF3GAvU5V4PCM7h5kQarz3l4x7NIBE"}
         response = requests.request("GET", url, headers=headers, data=payload)
         status_code = response.status_code
+        if status_code != 200:
+            print("Не поддерживаемая валюта либо дата.")
+            exit()
         result = response.text
         JSON = json.loads(result)
         base_responce = JSON["base"]
@@ -27,6 +30,9 @@ def func(n = input() .split()):
         headers = {"apikey": "hJaF3GAvU5V4PCM7h5kQarz3l4x7NIBE"}
         response = requests.request("GET", url, headers=headers, data=payload)
         status_code = response.status_code
+        if status_code != 200:
+            print("Не поддерживаемая валюта либо дата.")
+            exit()
         result = response.text
         JSON = json.loads(result)
         base_responce = JSON["base"]
